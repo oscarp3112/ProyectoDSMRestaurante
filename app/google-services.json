@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "982577622648",
+    "firebase_url": "https://fir-restauranteudb-default-rtdb.firebaseio.com",
+    "project_id": "fir-restauranteudb",
+    "storage_bucket": "fir-restauranteudb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982577622648:android:37919a253f300ad7b6078d",
+        "android_client_info": {
+          "package_name": "sv.edu.udb.proyectodsm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982577622648-vo5a18arol0eo4g0tvc92tcdk183pqof.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmKsCUCVpSMybEZqlCsdosH3z7HeMaYZk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982577622648-vo5a18arol0eo4g0tvc92tcdk183pqof.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

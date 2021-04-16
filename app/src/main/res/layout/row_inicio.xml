@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    android:elevation="5dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/descripcion1"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.353"
+            tools:srcCompat="@tools:sample/avatars" />
+        <TextView
+            android:id="@+id/nombre1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/image1"
+            android:text="Placeholder Name"
+            android:textColor="#000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/descripcion1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nombre1"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/image1"
+            android:text="Placeholder Price"
+            android:textColor="#000"
+            android:textSize="24sp" />
+
+
+        <Button
+            android:id="@+id/btnAñadir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descripcion1"
+            android:layout_alignLeft="@id/descripcion1"
+            android:backgroundTint="#096bdb"
+             />
+
+        <Button
+            android:id="@+id/btnQuitar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descripcion1"
+            android:layout_marginLeft="195dp"
+            android:backgroundTint="#096bdb"
+            />
+
+        <TextView
+            android:id="@+id/cantidadText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/btnQuitar"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/btnQuitar"
+            android:text="0"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="0" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

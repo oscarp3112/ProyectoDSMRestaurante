@@ -1,20 +1,14 @@
 package sv.edu.udb.proyectodsm;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.media.Image;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class Bienvenida extends AppCompatActivity {
     public static DatabaseReference refplatos;
@@ -34,7 +28,7 @@ public class Bienvenida extends AppCompatActivity {
         Compartir = new ImageButton[10];
         Mas = new Button[10];
 //Mapeo de nombres
-        Nombre[0]=(TextView)findViewById(R.id.nombre1);
+        Nombre[0]=(TextView)findViewById(R.id.nombre);
         Nombre[1]=(TextView)findViewById(R.id.nombre2);
         Nombre[2]=(TextView)findViewById(R.id.nombre3);
         Nombre[3]=(TextView)findViewById(R.id.nombre4);
@@ -45,7 +39,7 @@ public class Bienvenida extends AppCompatActivity {
         Nombre[8]=(TextView)findViewById(R.id.nombre9);
         Nombre[9]=(TextView)findViewById(R.id.nombre10);
 //Mapeo de descripciones
-        Descripcion[0]=(TextView)findViewById(R.id.descripcion1);
+        Descripcion[0]=(TextView)findViewById(R.id.descripcion);
         Descripcion[1]=(TextView)findViewById(R.id.descripcion2);
         Descripcion[2]=(TextView)findViewById(R.id.descripcion3);
         Descripcion[3]=(TextView)findViewById(R.id.descripcion4);
@@ -56,7 +50,7 @@ public class Bienvenida extends AppCompatActivity {
         Descripcion[8]=(TextView)findViewById(R.id.descripcion9);
         Descripcion[9]=(TextView)findViewById(R.id.descripcion10);
 //Mapeo de imágenes
-        Imagen[0]=(ImageView)findViewById(R.id.image1);
+        Imagen[0]=(ImageView)findViewById(R.id.image);
         Imagen[1]=(ImageView)findViewById(R.id.image2);
         Imagen[2]=(ImageView)findViewById(R.id.image3);
         Imagen[3]=(ImageView)findViewById(R.id.image4);
@@ -67,7 +61,7 @@ public class Bienvenida extends AppCompatActivity {
         Imagen[8]=(ImageView)findViewById(R.id.image9);
         Imagen[9]=(ImageView)findViewById(R.id.image10);
         //Mapeo de botones
-        Agregar[0]=(ImageButton)findViewById(R.id.agregar1);
+        Agregar[0]=(ImageButton)findViewById(R.id.agregar);
         Agregar[1]=(ImageButton)findViewById(R.id.agregar2);
         Agregar[2]=(ImageButton)findViewById(R.id.agregar3);
         Agregar[3]=(ImageButton)findViewById(R.id.agregar4);
@@ -78,7 +72,7 @@ public class Bienvenida extends AppCompatActivity {
         Agregar[8]=(ImageButton)findViewById(R.id.agregar9);
         Agregar[9]=(ImageButton)findViewById(R.id.agregar10);
 
-        Compartir[0]=(ImageButton)findViewById(R.id.share1);
+        Compartir[0]=(ImageButton)findViewById(R.id.share);
         Compartir[1]=(ImageButton)findViewById(R.id.share2);
         Compartir[2]=(ImageButton)findViewById(R.id.share3);
         Compartir[3]=(ImageButton)findViewById(R.id.share4);
@@ -89,7 +83,7 @@ public class Bienvenida extends AppCompatActivity {
         Compartir[8]=(ImageButton)findViewById(R.id.share9);
         Compartir[9]=(ImageButton)findViewById(R.id.share10);
 
-        Mas[0]=(Button)findViewById(R.id.mas1);
+        Mas[0]=(Button)findViewById(R.id.mas);
         Mas[1]=(Button)findViewById(R.id.mas2);
         Mas[2]=(Button)findViewById(R.id.mas3);
         Mas[3]=(Button)findViewById(R.id.mas4);

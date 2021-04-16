@@ -23,7 +23,7 @@ public class adaptadorHome extends FirebaseRecyclerAdapter<modeloHome,adaptadorH
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull modeloHome model) {
 
         holder.nombre.setText(model.getNombre());
-        String descripcion1 = model.getDesc();
+        String descripcion1 = model.getDesc() + "\n\n Precio: $"+String.valueOf(model.getPrecio());
         holder.desc.setText(descripcion1);
         Glide.with(holder.img.getContext()).load(model.getImgurl()).into(holder.img);
 

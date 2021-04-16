@@ -1,14 +1,15 @@
 package sv.edu.udb.proyectodsm;
 
 public class modeloHome {
-    String nombre, imgurl, precio, desc;
+    String nombre, imgurl, desc;
+    double precio;
 
     modeloHome()
     {
 
     }
 
-    public modeloHome(String nombre, String imgurl, String precio, String desc) {
+    public modeloHome(String nombre, String imgurl, double precio, String desc) {
         this.nombre = nombre;
         this.imgurl = imgurl;
         this.precio = precio;
@@ -31,11 +32,11 @@ public class modeloHome {
         this.imgurl = imgurl;
     }
 
-    public String getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 

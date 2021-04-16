@@ -23,7 +23,7 @@ public class adaptadorHome extends FirebaseRecyclerAdapter<modeloHome,adaptadorH
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull modeloHome model) {
 
         holder.nombre.setText(model.getNombre());
-        String descripcion1 = model.getDesc().toString() + " Precio:" + model.getPrecio().toString();
+        String descripcion1 = model.getDesc();
         holder.desc.setText(descripcion1);
         Glide.with(holder.img.getContext()).load(model.getImgurl()).into(holder.img);
 
@@ -32,7 +32,7 @@ public class adaptadorHome extends FirebaseRecyclerAdapter<modeloHome,adaptadorH
     @NonNull
     @Override
     public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_inicio,parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.plato_row,parent, false);
         return new myviewholder(view);
     }
 

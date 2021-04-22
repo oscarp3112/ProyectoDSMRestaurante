@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class adaptadorHome extends FirebaseRecyclerAdapter<modeloHome,adaptadorHome.myviewholder> {
+public class adaptadorHome extends FirebaseRecyclerAdapter<modeloHome, adaptadorHome.myviewholder> {
 
     public adaptadorHome(@NonNull FirebaseRecyclerOptions<modeloHome> options) {
         super(options);

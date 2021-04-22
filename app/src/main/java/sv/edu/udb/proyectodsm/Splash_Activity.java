@@ -22,7 +22,7 @@ public class Splash_Activity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 finally {
-                    Intent newIntent = new Intent(Splash_Activity.this, Login_Activity.class);
+                    Intent newIntent = new Intent(Splash_Activity.this, LoginActivity.class);
                     startActivity(newIntent);
                     finish();
                 }

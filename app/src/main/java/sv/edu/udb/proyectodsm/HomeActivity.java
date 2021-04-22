@@ -12,7 +12,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class Home_Activity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     RecyclerView rec;
     adaptadorHome adapter;

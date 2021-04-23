@@ -18,6 +18,23 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/textViewTitulo"
+                android:layout_width="372dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="45dp"
+                android:focusableInTouchMode="false"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center_horizontal"
+                android:text="@string/login_title"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/rojo_4"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/editTxtUser"
                 android:layout_width="match_parent"
@@ -47,9 +64,10 @@
                 android:layout_marginStart="55dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="56dp"
-                android:backgroundTint="#096bdb"
+                android:backgroundTint="@color/paleta_3"
                 android:text="@string/btn_login"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                app:strokeColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/btnGoogle"
@@ -58,7 +76,7 @@
                 android:layout_marginStart="55dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="56dp"
-                android:backgroundTint="#0750a5"
+                android:backgroundTint="@color/paleta_4"
                 android:text="@string/btn_google"
                 app:icon="@drawable/google_btn_icon"
                 app:iconGravity="textStart"
@@ -85,7 +103,7 @@
                 android:layout_marginStart="55dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="56dp"
-                android:backgroundTint="#468cd7"
+                android:backgroundTint="@color/paleta_5"
                 android:text="@string/btn_signUp" />
         </LinearLayout>
     </ScrollView>

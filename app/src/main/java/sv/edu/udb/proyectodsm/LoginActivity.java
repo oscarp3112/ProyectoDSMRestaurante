@@ -31,17 +31,19 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
 
-    //Revisando si la sesión está activa
     @Override
     protected void onStart() {
         super.onStart();
 
+        //Revisando si la sesión está activa
+        /*
         FirebaseUser user = mAuth.getCurrentUser();
         if(user!=null)
         {
             Intent intent = new Intent(LoginActivity.this, Bienvenida.class);
             startActivity(intent);
         }
+        */
     }
 
     @Override
@@ -135,7 +137,7 @@ public class LoginActivity extends AppCompatActivity {
                 firebaseAuthWithGoogle(account.getIdToken());
                 Toast.makeText(getApplicationContext(), "¡Sesión iniciada!", Toast.LENGTH_LONG).show();
 
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                Intent intent = new Intent(LoginActivity.this, Bienvenida.class);
                 startActivity(intent);
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately

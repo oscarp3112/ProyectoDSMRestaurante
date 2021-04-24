@@ -10,6 +10,9 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.FirebaseDatabase;
 
+import sv.edu.udb.proyectodsm.Data.adaptadorPedidos;
+import sv.edu.udb.proyectodsm.Data.modeloPedidos;
+
 public class Pedidos extends AppCompatActivity {
 
     RecyclerView rec;

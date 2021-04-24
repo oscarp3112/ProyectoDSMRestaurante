@@ -1,4 +1,4 @@
-package sv.edu.udb.proyectodsm;
+package sv.edu.udb.proyectodsm.Data;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+
+import sv.edu.udb.proyectodsm.R;
 
 public class adaptadorPedidos extends FirebaseRecyclerAdapter<modeloPedidos,adaptadorPedidos.myviewholder> {
     public adaptadorPedidos(@NonNull FirebaseRecyclerOptions<modeloPedidos> options) {

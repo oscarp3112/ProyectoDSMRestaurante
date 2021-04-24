@@ -1,4 +1,4 @@
-package sv.edu.udb.proyectodsm;
+package sv.edu.udb.proyectodsm.Data;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+
+import sv.edu.udb.proyectodsm.R;
 
 public class adaptadorHome extends FirebaseRecyclerAdapter<modeloHome, adaptadorHome.myviewholder> {
 

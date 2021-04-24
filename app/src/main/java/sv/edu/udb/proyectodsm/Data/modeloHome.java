@@ -1,4 +1,4 @@
-package sv.edu.udb.proyectodsm;
+package sv.edu.udb.proyectodsm.Data;
 
 public class modeloHome {
     String nombre, imgurl, desc;

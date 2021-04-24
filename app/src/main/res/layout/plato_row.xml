@@ -18,31 +18,44 @@
         <TextView
             android:id="@+id/descripcion1"
             android:layout_width="210dp"
-            android:layout_height="134dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="32dp"
             android:ems="10"
             android:inputType="textMultiLine"
             android:paddingRight="10sp"
             android:text="Descripción"
             android:textAlignment="textEnd"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/mas1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.979"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.435" />
+            app:layout_constraintStart_toEndOf="@+id/image1"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+        <FrameLayout
             android:id="@+id/image1"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.054"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/agregar1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.369"
-            tools:srcCompat="@tools:sample/avatars" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageFood"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageView
+                android:id="@+id/imageFrame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/frame" />
+
+        </FrameLayout>
 
         <TextView
             android:id="@+id/pedido1"
@@ -61,20 +74,25 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.411" />
 
-        <ImageButton
+        <Button
             android:id="@+id/agregar1"
-            android:layout_width="119dp"
+            android:layout_width="150dp"
             android:layout_height="69dp"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="16dp"
             android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/paleta_4"
+            app:icon="@drawable/ic_add_shopping_cart_black_18dp"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconSize="32dp"
+            app:iconTint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ic_add_shopping_cart_black_18dp" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/mas1"
-            android:layout_width="148dp"
-            android:layout_height="67dp"
+            android:layout_width="150dp"
+            android:layout_height="69dp"
             android:layout_marginEnd="36dp"
             android:layout_marginBottom="16dp"
             android:text="Más información"
@@ -87,12 +105,13 @@
             android:id="@+id/share1"
             android:layout_width="48dp"
             android:layout_height="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:backgroundTint="@color/paleta_4"
+            app:layout_constraintBottom_toTopOf="@+id/descripcion1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.951"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pedido1"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.027"
+            app:iconTint="#FFFFFF"
             app:srcCompat="@android:drawable/ic_menu_share" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

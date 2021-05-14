@@ -4,6 +4,8 @@
     <string name="login_options">¿No tienes una cuenta?</string>
     <string name="placeholder_user">Correo electrónico</string>
     <string name="placeholder_pass">Contraseña</string>
+    <string name="placeholder_orden">Aquí aparecerá tu orden.</string>
+
 
     <string name="btn_login">Ingresar</string>
     <string name="btn_signUp">Registrarse</string>
@@ -13,6 +15,7 @@
     <string name="btn_añadir">Añadir</string>
     <string name="btn_quitar">Quitar</string>
     <string name="btn_confirm">Confirmar orden</string>
+    <string name="btn_volver">Regresar</string>
     <string name="login_title">Inicia sesión en tu cuenta</string>
 
     <string name="title_activity_main">MainActivity</string>

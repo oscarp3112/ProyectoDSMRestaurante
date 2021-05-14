@@ -1,15 +1,15 @@
 package sv.edu.udb.proyectodsm.Data;
 
-public class modeloPedidos {
+public class historyModel {
     String Fecha, Pedido;
     double Total;
 
-    modeloPedidos()
+    historyModel()
     {
 
     }
 
-    public modeloPedidos(String Pedido, String Fecha, double Total) {
+    public historyModel(String Pedido, String Fecha, double Total) {
         this.Pedido = Pedido;
         this.Fecha = Fecha;
         this.Total = Total;

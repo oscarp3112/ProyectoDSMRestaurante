@@ -1,15 +1,15 @@
 package sv.edu.udb.proyectodsm.Data;
 
-public class modeloHome {
+public class platoModel {
     String nombre, imgurl, desc;
     double precio;
 
-    modeloHome()
+    platoModel()
     {
 
     }
 
-    public modeloHome(String nombre, String imgurl, double precio, String desc) {
+    public platoModel(String nombre, String imgurl, double precio, String desc) {
         this.nombre = nombre;
         this.imgurl = imgurl;
         this.precio = precio;

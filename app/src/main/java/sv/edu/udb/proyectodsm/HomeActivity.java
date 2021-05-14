@@ -19,14 +19,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import sv.edu.udb.proyectodsm.Data.adaptadorHome;
-import sv.edu.udb.proyectodsm.Data.modeloHome;
+import sv.edu.udb.proyectodsm.Data.platoAdapter;
+import sv.edu.udb.proyectodsm.Data.platoModel;
 
 
 public class HomeActivity extends AppCompatActivity {
 
     RecyclerView rec;
-    adaptadorHome adapter;
+    platoAdapter adapter;
     public static FirebaseDatabase database = FirebaseDatabase.getInstance();
     public static DatabaseReference refPlatos = database.getReference("Platos");
 
@@ -38,12 +38,12 @@ public class HomeActivity extends AppCompatActivity {
         rec = findViewById(R.id.recyclerView);
         rec.setLayoutManager(new LinearLayoutManager(this));
 
-        FirebaseRecyclerOptions<modeloHome> options =
-                new FirebaseRecyclerOptions.Builder<modeloHome>()
-                .setQuery(refPlatos, modeloHome.class)
+        FirebaseRecyclerOptions<platoModel> options =
+                new FirebaseRecyclerOptions.Builder<platoModel>()
+                .setQuery(refPlatos, platoModel.class)
                 .build();
 
-        adapter = new adaptadorHome(options);
+        adapter = new platoAdapter(options);
         rec.setAdapter(adapter);
     }
 

@@ -15,14 +15,14 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 import sv.edu.udb.proyectodsm.R;
 
-public class adaptadorHome extends FirebaseRecyclerAdapter<modeloHome, adaptadorHome.myviewholder> {
+public class platoAdapter extends FirebaseRecyclerAdapter<platoModel, platoAdapter.myviewholder> {
 
-    public adaptadorHome(@NonNull FirebaseRecyclerOptions<modeloHome> options) {
+    public platoAdapter(@NonNull FirebaseRecyclerOptions<platoModel> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull modeloHome model) {
+    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull platoModel model) {
 
         holder.nombre.setText(model.getNombre());
         String descripcion1 = model.getDesc() + "\n\n Precio: $"+String.valueOf(model.getPrecio());
@@ -46,8 +46,8 @@ public class adaptadorHome extends FirebaseRecyclerAdapter<modeloHome, adaptador
         public myviewholder(@NonNull View itemView) {
             super(itemView);
             img = (ImageView)itemView.findViewById(R.id.imageFood);
-            nombre=(TextView)itemView.findViewById(R.id.pedido1);
-            desc=(TextView)itemView.findViewById(R.id.descripcion1);
+            nombre=(TextView)itemView.findViewById(R.id.txtFoodName);
+            desc=(TextView)itemView.findViewById(R.id.txtFoodDesc);
 
         }
     }

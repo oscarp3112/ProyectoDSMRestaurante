@@ -10,13 +10,13 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.FirebaseDatabase;
 
-import sv.edu.udb.proyectodsm.Data.adaptadorPedidos;
-import sv.edu.udb.proyectodsm.Data.modeloPedidos;
+import sv.edu.udb.proyectodsm.Data.historyAdapter;
+import sv.edu.udb.proyectodsm.Data.historyModel;
 
 public class Pedidos extends AppCompatActivity {
 
     RecyclerView rec;
-    adaptadorPedidos adapter;
+    historyAdapter adapter;
     String usuario;
     public static FirebaseDatabase database = FirebaseDatabase.getInstance();
 
@@ -30,12 +30,12 @@ public class Pedidos extends AppCompatActivity {
         rec = findViewById(R.id.recyclerView);
         rec.setLayoutManager(new LinearLayoutManager(this));
 
-        FirebaseRecyclerOptions<modeloPedidos> options =
-                new FirebaseRecyclerOptions.Builder<modeloPedidos>()
-                        .setQuery(database.getReference("Pedidos").child(usuario), modeloPedidos.class)
+        FirebaseRecyclerOptions<historyModel> options =
+                new FirebaseRecyclerOptions.Builder<historyModel>()
+                        .setQuery(database.getReference("Pedidos").child(usuario), historyModel.class)
                         .build();
 
-        adapter = new adaptadorPedidos(options);
+        adapter = new historyAdapter(options);
         rec.setAdapter(adapter);
     }
 

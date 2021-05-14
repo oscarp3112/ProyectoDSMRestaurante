@@ -11,14 +11,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="288dp"
+        android:layout_height="239dp"
         android:layout_marginTop="15dp"
         android:background="#377D39ED">
 
         <TextView
-            android:id="@+id/descripcion1"
+            android:id="@+id/txtFoodDesc"
             android:layout_width="210dp"
-            android:layout_height="150dp"
+            android:layout_height="75dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="32dp"
             android:ems="10"
@@ -27,18 +27,17 @@
             android:text="Descripción"
             android:textAlignment="textEnd"
             android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/mas1"
+            app:layout_constraintBottom_toTopOf="@+id/btnAgregar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/image1"
+            app:layout_constraintStart_toEndOf="@+id/imageFoodFrame"
             app:layout_constraintTop_toTopOf="parent" />
 
         <FrameLayout
-            android:id="@+id/image1"
+            android:id="@+id/imageFoodFrame"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/agregar1"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -58,7 +57,7 @@
         </FrameLayout>
 
         <TextView
-            android:id="@+id/pedido1"
+            android:id="@+id/txtFoodName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -68,51 +67,42 @@
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/image1"
+            app:layout_constraintBottom_toTopOf="@+id/imageFoodFrame"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.411" />
 
         <Button
-            android:id="@+id/agregar1"
-            android:layout_width="150dp"
+            android:id="@+id/btnAgregar"
+            android:layout_width="97dp"
             android:layout_height="69dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="38dp"
             android:backgroundTint="@color/paleta_4"
             app:icon="@drawable/ic_add_shopping_cart_black_18dp"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconSize="35dp"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageFoodFrame" />
+
+        <Button
+            android:id="@+id/btnQuitar"
+            android:layout_width="97dp"
+            android:layout_height="69dp"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/paleta_4"
+            app:icon="@drawable/ic_remove_from_cart"
             app:iconGravity="textStart"
             app:iconPadding="0dp"
             app:iconSize="32dp"
             app:iconTint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/mas1"
-            android:layout_width="150dp"
-            android:layout_height="69dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginBottom="16dp"
-            android:text="Más información"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.903"
-            app:layout_constraintStart_toEndOf="@+id/agregar1" />
-
-        <ImageButton
-            android:id="@+id/share1"
-            android:layout_width="48dp"
-            android:layout_height="40dp"
-            android:backgroundTint="@color/paleta_4"
-            app:layout_constraintBottom_toTopOf="@+id/descripcion1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/pedido1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.027"
-            app:iconTint="#FFFFFF"
-            app:srcCompat="@android:drawable/ic_menu_share" />
+            app:layout_constraintStart_toEndOf="@+id/btnAgregar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -13,13 +13,13 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 import sv.edu.udb.proyectodsm.R;
 
-public class adaptadorPedidos extends FirebaseRecyclerAdapter<modeloPedidos,adaptadorPedidos.myviewholder> {
-    public adaptadorPedidos(@NonNull FirebaseRecyclerOptions<modeloPedidos> options) {
+public class historyAdapter extends FirebaseRecyclerAdapter<historyModel, historyAdapter.myviewholder> {
+    public historyAdapter(@NonNull FirebaseRecyclerOptions<historyModel> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull adaptadorPedidos.myviewholder holder, int position, @NonNull modeloPedidos model) {
+    protected void onBindViewHolder(@NonNull historyAdapter.myviewholder holder, int position, @NonNull historyModel model) {
         String pe = "Pedido realizado el " + model.getFecha();
         holder.pedido.setText(pe);
         holder.desc.setText(model.getPedido());
@@ -30,9 +30,9 @@ public class adaptadorPedidos extends FirebaseRecyclerAdapter<modeloPedidos,adap
 
     @NonNull
     @Override
-    public adaptadorPedidos.myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public historyAdapter.myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.orden_row,parent, false);
-        return new adaptadorPedidos.myviewholder(view);
+        return new historyAdapter.myviewholder(view);
     }
 
     class myviewholder extends RecyclerView.ViewHolder
@@ -41,9 +41,9 @@ public class adaptadorPedidos extends FirebaseRecyclerAdapter<modeloPedidos,adap
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
-            pedido=(TextView)itemView.findViewById(R.id.pedido1);
-            desc=(TextView)itemView.findViewById(R.id.descripcion1);
-            total=(TextView)itemView.findViewById(R.id.total1);
+            pedido=(TextView)itemView.findViewById(R.id.txtFoodName);
+            desc=(TextView)itemView.findViewById(R.id.txtFoodDesc);
+            total=(TextView)itemView.findViewById(R.id.txtTotalHistory);
 
         }
     }

@@ -11,17 +11,17 @@ Diego Geovanny Trigueros Fontan     02T   TF170243  diegofytn@gmail.com
 https://trello.com/b/FtKOG6oa/project-management
 
 # Video avance #2:
-
+https://youtu.be/9omKJiRCWbw
 
 # Video avance final:
 WIP
 
 # Recursos utilizados:
 Guías de laboratorio\
-Firebase data to RecyclerView | How to retrieve firebase data into recyclerview         https://www.youtube.com/watch?v=sZ8D1-hNeWo \
-How to Generate debug, release SHA1 key in Android Studio                               https://www.youtube.com/watch?v=p-4ZQOMG3EU \
-Firebase google authentication sign in using android - 2020                             https://www.youtube.com/watch?v=bBJF1M5h_UU \
-Splash Screen - Android Studio Tutorial                                                 https://www.youtube.com/watch?v=Q0gRqbtFLcw \
-FirebaseUI for Android — UI Bindings for Firebase                                       https://firebaseopensource.com/projects/firebase/firebaseui-android \ 
-Como trabajar con Tabbed Activity y View Pager                                          https://www.youtube.com/watch?v=W_PV3U3Vhyw \
-Tab Layout with Different Fragments                                                     https://www.youtube.com/watch?v=h4HwU_ENXYM \
+How to retrieve Firebase data into Recyclerview                           https://www.youtube.com/watch?v=sZ8D1-hNeWo \
+How to Generate debug, release SHA1 key in Android Studio                 https://www.youtube.com/watch?v=p-4ZQOMG3EU \
+Firebase Google authentication sign in using Android                      https://www.youtube.com/watch?v=bBJF1M5h_UU \
+Splash Screen - Android Studio Tutorial                                   https://www.youtube.com/watch?v=Q0gRqbtFLcw \
+FirebaseUI for Android — UI Bindings for Firebase                         https://firebaseopensource.com/projects/firebase/firebaseui-android \
+Como trabajar con Tabbed Activity y View Pager                            https://www.youtube.com/watch?v=W_PV3U3Vhyw \
+Tab Layout with Different Fragments                                       https://www.youtube.com/watch?v=h4HwU_ENXYM

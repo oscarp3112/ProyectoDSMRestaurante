@@ -1,10 +1,12 @@
 package sv.edu.udb.proyectodsm.Data;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,10 +15,17 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
+import sv.edu.udb.proyectodsm.MainActivity;
 import sv.edu.udb.proyectodsm.R;
 
 public class platoAdapter extends FirebaseRecyclerAdapter<platoModel, platoAdapter.myviewholder> {
 
+    public int[] prodCounter = new int[10];
+    public String[] prodName = new String[10];
+    public double[] prices = new double[10];
+    public String[] names = new String[10];
+    public int counter = 0;
+    String price = "0";
     public platoAdapter(@NonNull FirebaseRecyclerOptions<platoModel> options) {
         super(options);
     }
@@ -24,11 +33,18 @@ public class platoAdapter extends FirebaseRecyclerAdapter<platoModel, platoAdapt
     @Override
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull platoModel model) {
 
+        //Seteando los campos de cada producto
+        //Nombre
         holder.nombre.setText(model.getNombre());
-        String descripcion1 = model.getDesc() + "\n\n Precio: $"+String.valueOf(model.getPrecio());
+        if(counter > 9) counter = 9;
+        names[counter] = model.getNombre();
+        //Descripcion y precio
+        String descripcion1 = model.getDesc() + "\n\n Precio: $" + String.valueOf(model.getPrecio());
         holder.desc.setText(descripcion1);
+        prices[counter] = model.getPrecio();
+        counter = counter + 1;
+        //Imagen
         Glide.with(holder.img.getContext()).load(model.getImgurl()).into(holder.img);
-
     }
 
     @NonNull
@@ -49,6 +65,43 @@ public class platoAdapter extends FirebaseRecyclerAdapter<platoModel, platoAdapt
             nombre=(TextView)itemView.findViewById(R.id.txtFoodName);
             desc=(TextView)itemView.findViewById(R.id.txtFoodDesc);
 
+
+            //Asignando métodos a los botones
+            itemView.findViewById(R.id.btnAgregar).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MainActivity.total = MainActivity.total + prices[getAdapterPosition()];
+                    prodCounter[getAdapterPosition()] = prodCounter[getAdapterPosition()] + 1;
+                    prodName[getAdapterPosition()] = names[getAdapterPosition()] + " (" + prodCounter[getAdapterPosition()] + ")";
+                    MainActivity.productos = prodName;
+
+                    Log.d("a", prodName[getAdapterPosition()]);
+                    Log.d("a", String.valueOf(prodCounter[getAdapterPosition()]));
+                    Log.d("a", String.valueOf(MainActivity.total));
+                }
+            });
+
+            itemView.findViewById(R.id.btnQuitar).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(prodCounter[getAdapterPosition()] > 0)
+                    {
+                        MainActivity.total = MainActivity.total - prices[getAdapterPosition()];
+                        prodCounter[getAdapterPosition()] = prodCounter[getAdapterPosition()] - 1;
+                        prodName[getAdapterPosition()] = names[getAdapterPosition()] + " (" + prodCounter[getAdapterPosition()] + ")";
+                        if(prodCounter[getAdapterPosition()] == 0) prodName[getAdapterPosition()] = "";
+                    }
+                    else
+                    {
+                        prodName[getAdapterPosition()] = "";
+                    }
+                    MainActivity.productos = prodName;
+
+                    Log.d("a", prodName[getAdapterPosition()]);
+                    Log.d("a", String.valueOf(prodCounter[getAdapterPosition()]));
+                    Log.d("a", String.valueOf(MainActivity.total));
+                }
+            });
         }
     }
 }

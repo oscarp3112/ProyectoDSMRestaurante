@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,6 +26,10 @@ import sv.edu.udb.proyectodsm.ui.main.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static double total;
+    public static String[] productos = new String[10];
+    public String Orden = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+        /*
         FloatingActionButton fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        }); */
     }
 
     private void LogOff() {
@@ -66,6 +72,27 @@ public class MainActivity extends AppCompatActivity {
         ad.show();
     }
 
+    private void OpenCart()
+    {
+        //Procesando los datos obtenidos
+        Orden = "";
+        for(int i = 0; i < productos.length; i++)
+        {
+            //Tomando los productos que se compraron
+            if(productos[i] != null)
+            {
+                if(productos[i].trim() != "")
+                {
+                    Orden = Orden + productos[i].trim() + ", ";
+                }
+            }
+            //Quitando la última coma
+            if (i == productos.length - 1) Orden = Orden.substring(0, Orden.length() - 2);
+        }
+
+        Log.d("a", Orden);
+    }
+
     //Inicializando el menú superior
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -84,7 +111,14 @@ public class MainActivity extends AppCompatActivity {
                 LogOff();
                 return true;
             case R.id.optionCart:
-                Toast.makeText(getApplicationContext(), "Su carrito está vacío.", Toast.LENGTH_LONG).show();
+                if(total > 0)
+                {
+                    OpenCart();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Su carrito está vacío.", Toast.LENGTH_LONG).show();
+                }
                 return true;
         }
         return super.onOptionsItemSelected(item);

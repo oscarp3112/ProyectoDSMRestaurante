@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Abriendo el carrito
         Intent intent = new Intent(MainActivity.this, CartActivity.class);
-        intent.putExtra("total", total);
+        intent.putExtra("total", String.valueOf(total));
         intent.putExtra("orden", orden);
         startActivity(intent);
     }

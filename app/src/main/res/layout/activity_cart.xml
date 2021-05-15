@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrationActivity">
+    tools:context=".CartActivity">
 
     <ImageView
         android:id="@+id/imageRegArt"
@@ -28,9 +28,26 @@
         android:layout_marginEnd="56dp"
         android:text="@string/placeholder_orden"
         android:textColor="#171717"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageRegArt" />
+
+    <TextView
+        android:id="@+id/txtTotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="56dp"
+        android:text="@string/placeholder_total"
+        android:textAlignment="center"
+        android:textColor="#171717"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtOrden" />
 
     <Button
         android:id="@+id/btnConfirmar"
@@ -43,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtOrden" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTotal" />
 
     <Button
         android:id="@+id/btnVolver"

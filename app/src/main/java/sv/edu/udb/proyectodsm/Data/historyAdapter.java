@@ -20,7 +20,7 @@ public class historyAdapter extends FirebaseRecyclerAdapter<historyModel, histor
 
     @Override
     protected void onBindViewHolder(@NonNull historyAdapter.myviewholder holder, int position, @NonNull historyModel model) {
-        String pe = "Pedido realizado el " + model.getFecha();
+        String pe = "Pedido realizado el: " + model.getFecha();
         holder.pedido.setText(pe);
         holder.desc.setText(model.getPedido());
         String monto = "Total: $" + String.valueOf(model.getTotal());

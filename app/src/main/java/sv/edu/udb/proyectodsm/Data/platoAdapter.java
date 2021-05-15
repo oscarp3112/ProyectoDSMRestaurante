@@ -45,6 +45,7 @@ public class platoAdapter extends FirebaseRecyclerAdapter<platoModel, platoAdapt
         counter = counter + 1;
         //Imagen
         Glide.with(holder.img.getContext()).load(model.getImgurl()).into(holder.img);
+        holder.cant.setText("");
     }
 
     @NonNull
@@ -57,14 +58,14 @@ public class platoAdapter extends FirebaseRecyclerAdapter<platoModel, platoAdapt
     class myviewholder extends RecyclerView.ViewHolder
     {
         ImageView img;
-        TextView nombre, desc;
+        TextView nombre, desc, cant;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
             img = (ImageView)itemView.findViewById(R.id.imageFood);
             nombre=(TextView)itemView.findViewById(R.id.txtFoodName);
             desc=(TextView)itemView.findViewById(R.id.txtFoodDesc);
-
+            cant=(TextView)itemView.findViewById(R.id.txtCantidad);
 
             //Asignando métodos a los botones
             itemView.findViewById(R.id.btnAgregar).setOnClickListener(new View.OnClickListener() {
@@ -74,6 +75,7 @@ public class platoAdapter extends FirebaseRecyclerAdapter<platoModel, platoAdapt
                     prodCounter[getAdapterPosition()] = prodCounter[getAdapterPosition()] + 1;
                     prodName[getAdapterPosition()] = names[getAdapterPosition()] + " (" + prodCounter[getAdapterPosition()] + ")";
                     MainActivity.productos = prodName;
+                    cant.setText("x" + String.valueOf(prodCounter[getAdapterPosition()]));
 
                     Log.d("a", prodName[getAdapterPosition()]);
                     Log.d("a", String.valueOf(prodCounter[getAdapterPosition()]));
@@ -89,11 +91,18 @@ public class platoAdapter extends FirebaseRecyclerAdapter<platoModel, platoAdapt
                         MainActivity.total = MainActivity.total - prices[getAdapterPosition()];
                         prodCounter[getAdapterPosition()] = prodCounter[getAdapterPosition()] - 1;
                         prodName[getAdapterPosition()] = names[getAdapterPosition()] + " (" + prodCounter[getAdapterPosition()] + ")";
-                        if(prodCounter[getAdapterPosition()] == 0) prodName[getAdapterPosition()] = "";
+                        cant.setText("x" + String.valueOf(prodCounter[getAdapterPosition()]));
+
+                        if(prodCounter[getAdapterPosition()] == 0)
+                        {
+                            prodName[getAdapterPosition()] = "";
+                            cant.setText("");
+                        }
                     }
                     else
                     {
                         prodName[getAdapterPosition()] = "";
+                        cant.setText("");
                     }
                     MainActivity.productos = prodName;
 

@@ -5,8 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -17,18 +15,15 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
-import sv.edu.udb.proyectodsm.Fragments.HistoryFragment;
-import sv.edu.udb.proyectodsm.Fragments.MenuFragment;
 import sv.edu.udb.proyectodsm.ui.main.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
     public static double total;
     public static String[] productos = new String[10];
-    public String Orden = "";
+    public String orden = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     private void OpenCart()
     {
         //Procesando los datos obtenidos
-        Orden = "";
+        orden = "";
         for(int i = 0; i < productos.length; i++)
         {
             //Tomando los productos que se compraron
@@ -83,14 +78,19 @@ public class MainActivity extends AppCompatActivity {
             {
                 if(productos[i].trim() != "")
                 {
-                    Orden = Orden + productos[i].trim() + ", ";
+                    orden = orden + productos[i].trim() + ", ";
                 }
             }
             //Quitando la última coma
-            if (i == productos.length - 1) Orden = Orden.substring(0, Orden.length() - 2);
+            if (i == productos.length - 1) orden = orden.substring(0, orden.length() - 2);
         }
+        Log.d("a", orden);
 
-        Log.d("a", Orden);
+        //Abriendo el carrito
+        Intent intent = new Intent(MainActivity.this, CartActivity.class);
+        intent.putExtra("total", total);
+        intent.putExtra("orden", orden);
+        startActivity(intent);
     }
 
     //Inicializando el menú superior
@@ -111,14 +111,8 @@ public class MainActivity extends AppCompatActivity {
                 LogOff();
                 return true;
             case R.id.optionCart:
-                if(total > 0)
-                {
-                    OpenCart();
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(), "Su carrito está vacío.", Toast.LENGTH_LONG).show();
-                }
+                if(total > 0) OpenCart();
+                else Toast.makeText(getApplicationContext(), "Su carrito está vacío.", Toast.LENGTH_LONG).show();
                 return true;
         }
         return super.onOptionsItemSelected(item);
